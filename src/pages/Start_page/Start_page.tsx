@@ -1,12 +1,11 @@
 import React from 'react';
 import Main from "./Main/Main";
-import Footer from "./Footer/Footer";
+import styles from "./Start_page.module.css";
 
 function StartPage() {
     return (
-        <div className="wrapper">
+        <div className={styles.wrapper}>
             <Main/>
-            <Footer/>
         </div>
     );
 }
