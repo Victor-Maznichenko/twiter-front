@@ -3,6 +3,9 @@ body {
     font-family: TwitterChirpExtendedHeavy, Verdana, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: #000;
 }
+*, *:after, *:before{
+    box-sizing: border-box;
+}
 
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -15,6 +18,45 @@ a{
 a:hover{
     text-decoration: underline;
 }
+select{
+    background-color: transparent;
+    appearance: none;
+    line-height: 20px;
+    outline: none;
+    color: rgb(217, 217, 217);
+    border-radius: 4px;
+    margin: 0px;
+    border: none;
+    padding: 18px 30px 10px 8px;
+    font: 400 17px "Segoe UI" !important;
+    min-width: 120px;
+}
+select:focus{
+    box-shadow: rgb(29 161 242) 0px 0px 0px 2px;
+}
+option{
+    font-size: 17px;
+    background-color: rgb(0, 0, 0);
+}
+button{
+    outline: none;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+input{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 17px;
+}
+
+h1,h2,h3,h4,h5,h6, p{
+    margin: 0;
+}
+
 .title{
     font-weight: 700;
     font-size: 64px;
@@ -30,6 +72,7 @@ a:hover{
     border-radius: 400px;
     font-family: "Segoe UI", sans-serif;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .blue-btn{
@@ -47,4 +90,142 @@ a:hover{
 }
 .border-btn:hover{
     background-color: rgba(29, 161, 242, 0.1);
+}
+
+/*Popup*/
+.popup{
+    position: absolute;
+    background-color: rgba(91, 112, 131, 0.4);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+}
+.popup__inner{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000;
+    padding: 16px 32px 36px;
+    border-radius: 16px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+.popup__img{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 25px;
+}
+.popup__img svg{
+    width: 32px;
+    display: inline-block;
+    fill: rgb(217, 217, 217);
+}
+.popup__input{
+    display: block;
+    font-family: "Segoe UI";
+    max-width: 100%;
+    width: 100%;
+    padding: 28px 12px 12px 12px;
+}
+.popup__title{
+    line-height: 28px;
+    font-size: 23px;
+    font-weight: 700;
+    color: rgb(217, 217, 217);
+    margin-bottom: 28px;
+}
+.popup__label{
+    max-width: 100%;
+    position: relative;
+    display: block;
+    border-radius: 4px;
+    border: 1px solid rgb(47, 51, 54);
+}
+.popup__label+.popup__label{
+    margin-top: 25px;
+    display: block;
+}
+.popup__label-placeholder{
+    font-family: "Segoe UI", sans-serif;
+    position: absolute;
+    font-size: 18px;
+    color: rgb(110, 118, 125);
+    font-weight: 400;
+    top: 50%;
+    left: 8px;
+    transform: translateY(-50%);
+    transition: all .2s;
+}
+.popup__label:focus-within .popup__label-placeholder{
+    font-size: small;
+    top: 8px;
+    transform: translateY(0);
+}
+.popup__select-wrapper{
+    display: inline-flex;
+    border: 1px solid rgb(47, 51, 54);
+    position: relative;
+    border-radius: 4px;
+    font-family: "Segoe UI";
+}
+.popup__select-wrapper.mounth{
+    flex-grow: 2;
+}
+.popup__selects{
+    display: flex;
+    align-items: center;
+}
+.popup__select-wrapper+.popup__select-wrapper{
+    margin-left: 12px;
+}
+.popup__select-wrapper span{
+    line-height: 16px;
+    font-size: 13px;
+    color: rgb(110, 118, 125);
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+.popup__select-arrow{
+    height: 1.5em;
+    fill:rgb(110, 118, 125);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 6px;
+    z-index: -1;
+}
+.popup__date{
+    font-family: "Segoe UI";
+}
+.popup-close{
+    position: absolute;
+    width: 30px;
+    top: 14px;
+    left: 14px;
+}
+.popup__select{
+    width: 100%;
+}
+.popup__date-name{
+    font-weight: 900;
+    font-size: 15px;
+    line-height: 20px;
+    color: rgb(217, 217, 217);
+    margin-top: 32px;
+}
+.popup__date-description {
+    color: rgb(110, 118, 125);
+    font-weight: 400;
+    margin-bottom: 16px;
+}
+.popup__btn{
+    display: block;
+    width: 100%;
+    margin-top: 50px;
 }

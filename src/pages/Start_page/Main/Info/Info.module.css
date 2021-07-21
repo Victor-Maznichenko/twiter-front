@@ -14,11 +14,14 @@
     display: block;
     margin-bottom: 60px;
 }
-
+.main__info-title{
+    margin-bottom: 48px;
+}
 .main__info-description {
     line-height: 36px;
     font-size: 31px;
     font-weight: 700;
+    margin-bottom: 32px;
 }
 
 .main__info-btns {

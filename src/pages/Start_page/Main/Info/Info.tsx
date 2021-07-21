@@ -2,6 +2,14 @@ import React from 'react';
 import styles from "./Info.module.css";
 
 function Info() {
+    const [open, setOpen] = React.useState(false);
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+    const handleClickClose = () => {
+        setOpen(false);
+    };
+
     return (
             <div className={styles['main__info']}>
                 <div className={styles['main__info-img']}>
@@ -12,11 +20,11 @@ function Info() {
                         </g>
                     </svg>
                 </div>
-                <h1 className="main__info-title title">В курсе происходящего</h1>
+                <h1 className={`${styles['main__info-title']} title`}>В курсе происходящего</h1>
                 <p className={styles['main__info-description']}>Присоединяйтесь к Твиттеру прямо сейчас!</p>
                 <div className={styles["main__info-btns"]}>
-                    <a href="./" className={`${styles["main__info-btn"]} blue-btn`}>Зарегистрироваться</a>
-                    <a href="./" className={`${styles["main__info-btn"]} border-btn`}>Войти</a>
+                    <button onClick={handleClickOpen} className={`${styles["main__info-btn"]} blue-btn`}>Зарегистрироваться</button>
+                    <button onClick={handleClickOpen} className={`${styles["main__info-btn"]} border-btn`}>Войти</button>
                 </div>
             </div>
     );
